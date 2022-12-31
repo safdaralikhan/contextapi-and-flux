@@ -49,6 +49,7 @@ import import usecontext. then use it in the main function.andthen use it where 
 
 
 What is flux?
+https://www.freecodecamp.org/news/how-to-use-flux-in-react-example/
 Flux uses a unidirectional data flow pattern to solve state management complexity. Remember 
 it is not a framework – rather it's more of a pattern that targets to solve the state management issue.
 To solve this state management issue, many companies and people have developed various solutions.
@@ -73,4 +74,5 @@ Store: this holds the app state and is a data layer of this pattern.
 Stores get updated because they have a callback that is registered using the dispatcher.
 
 
-
+WEBPACK AND BABEL
+https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/
