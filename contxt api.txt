@@ -1,0 +1,76 @@
+REACT CONTEXT API 
+react context api allows you to easily access data at different level of the component tree,
+without passing prop to every level.
+
+3 step for react context api intigration.
+1)first we need to create context state.
+2)we need provider people can access context .
+3) we need consumer.
+
+for example humary pas 3 component hai humy component C Ka data component A mai show karana hai
+to hum phely B ko pass kary gy phr A ko pass kary gy. YA SB HUM COMPONENT TO COMPONENT SEQUENE mia
+data pass kary gy.
+ab ek scenario ya hai k mujy app.js mai ek aisa data hai jo mujy sirf comp c ko pass karna hai
+is scenario k liye CONTEXTAPI aya hai
+
+1)Create context at the top of function jis page sy data bejna ha.
+const Firstname = createContext()
+2)us k bd ise page mai provider bana gai jis mai hum value pass karty hai jo humy C comp ko provide krna hai..
+
+   <Firstname.Provider value={"safdar khan"}>
+   <CompA/>
+   </Firstname.Provider>
+
+3)us k bd jis component mai humy value get krni hai us pai mai phely create context k varible ko import karo
+us k bd consumer bana do component ko wrap kr k or us k ander return ka fucton bana do or parameter mai
+get kr lo.
+<Firstname.Consumer>
+{(fname)=>{
+      return(
+ <Lastname.Consumer>
+   {(lname)=>{
+return (
+  <div> my name is {fname} {lname}</div>
+)
+
+}}
+ <Lastname.Consumer>
+);
+
+ }}
+</Firstname.Consumer>
+
+
+SHORTMETHOD
+JO KAAM HUM LOG CONSUMER KA KR RAHY TY WO KAAM HUM USECONTEXT HOOK SY B KR SAKTY HAI.
+import import usecontext. then use it in the main function.andthen use it where you want.
+   const firstname = useContext(Firstname)
+
+
+
+What is flux?
+Flux uses a unidirectional data flow pattern to solve state management complexity. Remember 
+it is not a framework – rather it's more of a pattern that targets to solve the state management issue.
+To solve this state management issue, many companies and people have developed various solutions.
+Facebook, who developed ReactJS, came up with a solution called Flux.
+
+View: this component renders the UI. Whenever any user interaction occurs on it (like an event)
+then it fires off the action. Also when the Store informs the View that some change has occurred,
+it re-renders itself. For example, if a user clicks the Add button.
+
+Action: this handles all the events. These events are passed by the view component. 
+This layer is generally used to make API calls. Once the action is done 
+it is dispatched using the Dispatcher. The action can be something like add a post,
+delete a post, or any other user interaction.
+
+Dispatcher: this is the central hub and singleton registry. It dispatches the payload 
+from Actions to Store. Also makes sure that there are no cascading effects
+ when an action is dispatched to the store. It ensures that no other action happens
+ before the data layer has completed processing and storing operations.
+
+Store: this holds the app state and is a data layer of this pattern.
+ Do not consider it as a model from MVC. An application can have one or many app stores. 
+Stores get updated because they have a callback that is registered using the dispatcher.
+
+
+
